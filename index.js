@@ -1,19 +1,28 @@
-function takeANumber(katzDeliLine,name){
-  katzDeliLine.push(name);
-  return(`Welcome, ${name}. You are number ${katzDeliLine.length} in line.`);
+var total = 0;
+
+function takeANumber(katzDeliLine){
+  katzDeliLine.push(total + 1);
+  total++;
+  return(`Welcome you are number ${total}.`);
+  
 }
+total + 1 
+total = total + 1 
+
 function nowServing(katzDeliLine){
   var i = 0;
   while (i < katzDeliLine.length){
     i++;
-  }if (katzDeliLine.length === 0){
+  }
+  if (katzDeliLine.length === 0){
     return "There is nobody waiting to be served!"
   }
   else return(`Currently serving ${katzDeliLine.shift()}.`)
 }
 
-var line = [];
+
 function currentLine(katzDeliLine){
+ var line = [];
   for (var i = 0;i < katzDeliLine.length;i++){
   line.push(` `+[i+1]+`. `  + katzDeliLine[i]);
   }
